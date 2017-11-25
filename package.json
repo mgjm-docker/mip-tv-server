@@ -8,7 +8,8 @@
     "test": "test"
   },
   "dependencies": {
-    "cassandra-driver": "^3.3.0"
+    "cassandra-driver": "^3.3.0",
+    "maxmind": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
