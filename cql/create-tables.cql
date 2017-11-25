@@ -1,3 +1,5 @@
+CREATE KEYSPACE mip_tv WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
 CREATE TYPE location (
     lat float,
     long float
@@ -7,9 +9,9 @@ CREATE TABLE rawdata (
     userid uuid,
     ip text,
     country text,
-    loc location,
+    loc frozen<location>,
     ts timestamp,
-    uri string,
+    uri text,
     day date,
     PRIMARY KEY (
         (userid, day), ts
@@ -20,32 +22,32 @@ CREATE TABLE rawdata_by_country (
     userid uuid,
     ip text,
     country text,
-    loc location,
+    loc frozen<location>,
     ts timestamp,
-    uri string,
+    uri text,
     day date,
     PRIMARY KEY (
         (userid, day, country), ts
     )
 );
 
-CREATE TABLE rawdata_by_location (
+CREATE TABLE rawdata_by_loc (
     userid uuid,
     ip text,
     country text,
-    loc location,
+    loc frozen<location>,
     ts timestamp,
-    uri string,
+    uri text,
     day date,
     PRIMARY KEY (
-        (userid, day, location), ts
+        (userid, day, loc), ts
     )
 );
 
 CREATE TABLE locations (
     userid uuid,
     day date,
-    loc location,
+    loc frozen<location>,
     cnt counter,
     PRIMARY KEY (
         (userid, day), loc
