@@ -5,7 +5,9 @@
   "main": "index.js",
   "directories": {
     "lib": "lib",
-    "test": "test"
+    "test": "test",
+    "geoip": "geoip",
+    "cql": "cql"
   },
   "dependencies": {
     "cassandra-driver": "^3.3.0",
@@ -19,8 +21,8 @@
     "type": "git",
     "url": "git+https://github.com/mip-tv/server.git"
   },
-  "author": "Martin Michaelis <code@mgjm.de>",
-  "license": "UNLICENSED",
+  "author": "Martin, Leon, Leonardo, Marc, Joana, Otto, Hendrik, Damian",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mip-tv/server/issues"
   },
