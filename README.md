@@ -13,7 +13,7 @@ Based on:
 To run this server you need docker and docker-compose.
 
 docker-compose.yml
-```
+``` yml
 version: '3'
 
 services:
@@ -22,8 +22,8 @@ services:
         restart: unless-stopped
         volumes:
         - ./server:/server:ro
-		ports:
-		- '8080:8080'
+        ports:
+        - '8080:8080'
 
     cassandra:
         image: cassandra:3
