@@ -35,7 +35,7 @@ services:
         - ./cassandra:/var/lib/cassandra
 ```
 
-Before you can use the server the cassandra database needs to be initalized with the commands in [cql/create-tables.cql]():
+Before you can use the server the cassandra database needs to be initalized with the commands in [cql/create-tables.cql](cql/create-tables.cql):
 ```
 docker run --rm  -it --network <network_of_docker_compose> cassandra:3 cqlsh cassandra
 ```
